@@ -26,3 +26,15 @@ Test data factory for Salesforce
   List<Account> accounts = (List<Account>) TestDataFactory.getAccountCreator().createMultipleObjects(100);
 
 ```
+
+### Create  mulitple child sobject 
+```
+  //Create 3 accounts
+  List<Account> accounts = (List<Account>) TestDataFactory.getAccountCreator().createMultipleObjects(3);
+  Insert accounts;
+  
+  //Create 5 orders for each account with status active - total 15 orders created 
+  List<Order> orders = (List<Order>) TestDataFactory.getOrderCreator()
+                                                    .addOverrideValue('Status', 'Active')
+                                                    .createMultipleObjectsforParents(5, accounts, 'accountId');
+```
