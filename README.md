@@ -17,7 +17,7 @@ Test data factory for Salesforce
 
 ### Create sobject when no default builder exists
 ```
-  Account account = (Account) TestDataFactory.getsObjectCreator(Schema.Account.sObjectTyp).createObject();
+  Account account = (Account) TestDataFactory.getsObjectCreator(Schema.Account.sObjectType).createObject();
 
 ```
 
